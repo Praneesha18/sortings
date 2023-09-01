@@ -35,7 +35,7 @@ void mergesort(int a[],int lb,int ub)
 }
 void merge(int a[],int mid,int lb,int ub)
 {
-    int b[ub+1];
+    int b[100];
     int i=lb;
     int j=mid+1;
     int k=lb;
