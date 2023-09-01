@@ -7,8 +7,7 @@ int main()
     int n,i;
     printf("enter the number of elements you want to store\n");
     scanf("%d",&n);
-    int a[n],b[n];
-    print(b,n);
+    int a[n];
     printf("enter the elements \n");
     for(i=0;i<n;i++)
     {
@@ -20,7 +19,7 @@ int main()
     print(a,n);
     printf("the numbers after sorting is\n");
     mergesort(a,0,n-1);
-    print(b,n);
+    print(a,n);
     return 0;
     
 }
@@ -67,7 +66,10 @@ void merge(int a[],int mid,int lb,int ub)
         j++;
         k++;
     }
-    printf("line 71\n");
+    for(i=0;i<=ub;i++)
+    {
+        a[i]=b[i];
+    }
 }
 void print(int a[],int n)
 {
