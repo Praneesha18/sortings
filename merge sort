@@ -1,0 +1,79 @@
+#include<stdio.h>
+void print(int a[],int n);
+void mergesort(int a[],int lb,int ub);
+void merge(int a[],int mid,int lb,int ub);
+int main()
+{
+    int n,i;
+    printf("enter the number of elements you want to store\n");
+    scanf("%d",&n);
+    int a[n],b[n];
+    print(b,n);
+    printf("enter the elements \n");
+    for(i=0;i<n;i++)
+    {
+        printf("a[%d]= ",i);
+        scanf("%d",&a[i]);
+        printf("\n");
+    }
+    printf("the numbers before sorting is\n");
+    print(a,n);
+    printf("the numbers after sorting is\n");
+    mergesort(a,0,n-1);
+    print(b,n);
+    return 0;
+    
+}
+void mergesort(int a[],int lb,int ub)
+{
+    if(lb<ub)
+    {
+        int mid=(lb+ub)/2;
+        mergesort(a,lb,mid);
+        mergesort(a,mid+1,ub);
+        merge(a,mid,lb,ub);
+    }
+}
+void merge(int a[],int mid,int lb,int ub)
+{
+    int b[ub+1];
+    int i=lb;
+    int j=mid+1;
+    int k=lb;
+    while(i<=mid&&j<=ub)
+    {
+        if(a[i]>a[j])
+        {
+            b[k]=a[j];
+            j++;
+            k++;
+        }
+        else
+        {
+            b[k]=a[i];
+            i++;
+            k++;
+        }
+    }
+    while(i<=mid)
+    {
+        b[k]=a[i];
+        k++;
+        i++;
+    }
+    while(j<=ub)
+    {
+        b[k]=a[j];
+        j++;
+        k++;
+    }
+    printf("line 71\n");
+}
+void print(int a[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d\n",a[i]);
+    }
+}
