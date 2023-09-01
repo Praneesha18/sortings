@@ -45,11 +45,11 @@ while(start<end)
     {
         start++;
     }
-    while(a[end]<pivot)
+    while(a[end]>pivot)
     {
         end--;
     }
-    if(start<end);
+    if(start<end)
     swap(a[start],a[end]);
 }
 a[l]=a[end];
